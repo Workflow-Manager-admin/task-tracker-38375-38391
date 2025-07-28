@@ -3,24 +3,6 @@ import "./App.css";
 import "./design-tokens.css";
 import "./todo-ui.css";
 
-/**
- * Applies a CSS class to the body for Add/Edit screens, to ensure Figma-specific AppBar backgrounds.
- */
-function usePageBodyClass(page) {
-  useEffect(() => {
-    if (page === "add" || page === "edit") {
-      document.body.classList.add(page);
-    } else {
-      document.body.classList.remove("add");
-      document.body.classList.remove("edit");
-    }
-    return () => {
-      document.body.classList.remove("add");
-      document.body.classList.remove("edit");
-    };
-  }, [page]);
-}
-
 // Reusable Icons as React components (using image URLs for demo)
 const ICONS = {
   check: "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/e166d4cd-2f0c-48bc-b3f3-520dc596d481",
@@ -41,9 +23,6 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [filter, setFilter] = useState("all"); // all | completed
   const [selectedTodo, setSelectedTodo] = useState(null);
-
-  // Add Figma-specific body class for AppBar background (edit/add)
-  usePageBodyClass(page);
 
   // ==== EFFECT: Persist and load from localStorage ====
   useEffect(() => {
@@ -369,11 +348,7 @@ function App() {
     return (
       <div className="todo-app-frame">
         <StatusBar />
-        {/* AppBar with Figma edit style - class 'edit' to .app-bar for background */}
-        <div className="app-bar edit">
-          <button className="app-bar-back" onClick={gotoList} aria-label="Back" />
-          <span className="app-bar-title">Edit Task</span>
-        </div>
+        <AppBar title="Edit Task" onBack={gotoList} />
         <form id="edit-todo-form" onSubmit={handleSubmit} autoComplete="off">
           <div className="input-section">
             <label className="input-label" htmlFor="edit-title">
@@ -406,19 +381,24 @@ function App() {
               placeholder="Enter to-do details"
             />
           </div>
-          <div className="actions-row">
+          <div style={{display: "flex", gap: "1.5rem", justifyContent: "center", marginTop: 32 }}>
             <button
               className="primary-action-btn"
               type="submit"
-              /* Will get Figma correct size/style from core CSS */
+              style={{ width: 170, maxWidth: "42vw" }}
             >
               Update
             </button>
             <button
-              className="primary-action-btn alt"
+              className="primary-action-btn"
               type="button"
+              style={{
+                width: 170,
+                maxWidth: "42vw",
+                background: "var(--color-d6d7ef)",
+                color: "var(--color-8b8787)"
+              }}
               onClick={handleCancel}
-              /* .alt class for Figma Cancel button palette (light background, gray text) */
             >
               Cancel
             </button>
