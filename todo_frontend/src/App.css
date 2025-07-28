@@ -1,0 +1,15 @@
+/* App.css (minimal) — only theme toggle utility; main UI handled by todo-ui.css/design-tokens.css */
+
+:root {
+  /* Theme palette (not used since all comes from design tokens) */
+}
+
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
+  font-family: var(--font-jost, Arial, sans-serif);
+  background: var(--color-ffffff);
+  color: var(--color-000000);
+}

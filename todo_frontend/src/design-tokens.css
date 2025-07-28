@@ -1,0 +1,50 @@
+:root {
+  /* Color Variables */
+  --color-system-bg-dark-base-primary: #1a1a1a;
+  --color-label-light-primary: #fff; /* Assuming white for illustrative purposes */
+  --color-label-dark-primary: #000;
+  --color-label-dark-tertiary: #8b8787;
+  --color-color-light-green: #34c759;
+  --color-color-dark-yellow: #ffd60a;
+  --color-systemgreen-light: #34c759;
+  --color-ffffff: #ffffff;
+  --color-d6d7ef: #d6d7ef;
+  --color-9395d3: #9395d3;
+  --color-8b8787: #8b8787;
+  --color-000000: #000000;
+  --color-d1d1d6: #d1d1d6;
+  --color-ebebf5: #ebebf5;
+  --color-34c759: #34c759;
+  --color-ffd60a: #ffd60a;
+  --color-b3b7ee: #b3b7ee;
+
+  /* Typography */
+  --font-jost: 'Jost', Arial, sans-serif;
+
+  /* Font Styles - only font-size/weight/line-height, color separately */
+  --typo-display: 24px 600 34.68px;  /* typo_8, e.g. for page titles */
+  --typo-section-title: 16px 400 23.12px; /* typo_11 */
+  --typo-list-title: 13px 600 18.78px;  /* typo_9 */
+  --typo-list-caption: 10px 400 14.45px; /* typo_10 */
+  --typo-large-button: 20px 600 28.9px; /* typo_12 */
+  --typo-medium-button: 15px 400 21.68px; /* typo_13 */
+
+  /* Spacing (Selected) */
+  --spacing-xs: 4px;
+  --spacing-s: 8px;
+  --spacing: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 32px;
+  --spacing-xl: 40px;
+  --spacing-xxl: 82px;
+  --app-width: 414px;
+  --app-height: 896px;
+
+  /* Border Radius */
+  --radius-1: 1px;
+  --radius-s: 15px;
+  --radius-l: 20px;
+
+  /* Shadow */
+  --drop-shadow: 0 4px 4px 0 #00000040;
+}
